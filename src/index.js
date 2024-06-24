@@ -1,4 +1,25 @@
+import Router from './Router';
 import Component from './Component';
+
+class Home extends Component {
+  render() {
+    return '<h1>Home</h1>';
+  }
+}
+
+class About extends Component {
+  render() {
+    return '<h1>About</h1>';
+  }
+}
+
+const routes = [
+  { path: '/', component: new Home() },
+  { path: '/about', component: new About() },
+];
+
+const router = new Router(routes);
+window.router = router;
 
 class App extends Component {
   constructor() {
